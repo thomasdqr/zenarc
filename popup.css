@@ -1,0 +1,269 @@
+/* ZenArc Tab Manager - Arc-Inspired Design */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', sans-serif;
+  background: #ffffff;
+  color: #1c1c1e;
+  width: 280px;
+  height: 300px;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  background: #ffffff;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  padding: 16px 20px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f7;
+}
+
+.logo h1 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c1c1e;
+  letter-spacing: -0.3px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8e8e93;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34c759;
+}
+
+.status-dot.inactive {
+  background: #ff3b30;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setting-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c1c1e;
+  letter-spacing: -0.2px;
+}
+
+.time-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.time-option {
+  background: #f2f2f7;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.time-option:hover {
+  background: #e5e5ea;
+  transform: scale(0.98);
+}
+
+.time-option.active {
+  background: #007aff;
+  color: white;
+}
+
+.time-option.active:hover {
+  background: #0056b3;
+}
+
+.time-value {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.time-unit {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Toggle Section */
+.toggle-section {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-container {
+  background: #f2f2f7;
+  border-radius: 10px;
+  padding: 14px 16px;
+  width: 100%;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c1c1e;
+  letter-spacing: -0.2px;
+}
+
+.toggle-label input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  width: 42px;
+  height: 24px;
+  background: #e5e5ea;
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-label input:checked + .toggle-slider {
+  background: #34c759;
+}
+
+.toggle-label input:checked + .toggle-slider::before {
+  transform: translateX(18px);
+}
+
+/* Info Section */
+.info-section {
+  background: #f2f2f7;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.info-label {
+  color: #8e8e93;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+}
+
+.info-value {
+  font-weight: 600;
+  color: #1c1c1e;
+  letter-spacing: -0.2px;
+}
+
+.info-note {
+  font-size: 11px;
+  color: #8e8e93;
+  text-align: center;
+  padding: 6px 8px;
+  background: white;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+}
+
+/* Footer */
+.footer {
+  padding: 8px 20px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.save-indicator {
+  background: #34c759;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+  letter-spacing: -0.1px;
+}
+
+.save-indicator.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Arc-style subtle animations */
+.time-option, .toggle-slider, .save-indicator {
+  will-change: transform;
+}
+
+.time-option:active {
+  transform: scale(0.95);
+}
+
+/* Remove any system focus outlines for cleaner look */
+button:focus,
+input:focus {
+  outline: none;
+}
