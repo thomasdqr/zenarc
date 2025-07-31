@@ -36,14 +36,6 @@ A Firefox extension for Zen Browser that automatically closes tabs after a confi
 5. Click "Load Temporary Add-on"
 6. Select the `manifest.json` file from the extension directory
 
-### Icons Included
-
-The extension includes the official ZenArc logo in all required sizes:
-- `icon-16.png` (16x16 pixels) - Toolbar icon
-- `icon-32.png` (32x32 pixels) - Extension management page
-- `icon-48.png` (48x48 pixels) - Extension management page  
-- `icon-128.png` (128x128 pixels) - Store listings and high-DPI displays
-
 ## Usage
 
 1. **Access Settings**: Click the ZenArc extension icon in your toolbar
